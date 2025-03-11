@@ -9,6 +9,9 @@ A simple Weather Dashboard application built with React that allows users to vie
 - Retry mechanism with exponential backoff for fetching API data.
 - User's city selection is persisted across sessions using local storage.
 
+## To Do
+We can temporarily store API responses for each city for some time (30 mins) and minimize API calls on every rerender. 
+
 ## Technologies Used
 
 - React and Typescript
@@ -55,6 +58,7 @@ VITE_API_KEY= <Key>
 ```
 npm run dev
 ```
+
 
 https://weather-dashboard-4w0and73o-paragdineshguptas-projects.vercel.app/
 ![image](https://github.com/user-attachments/assets/8d93bf21-0602-425a-9af8-0defa48d4f56)
