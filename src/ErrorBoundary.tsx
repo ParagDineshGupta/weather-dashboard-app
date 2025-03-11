@@ -1,41 +1,36 @@
-// copied from react documentation
+// custom error boundary in ts format
+// https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/error_boundaries/
+import { Component, ErrorInfo, ReactNode } from "react";
 
-import * as React from 'react';
+interface Props {
+    children?: ReactNode;
+}
 
-class ErrorBoundary extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { hasError: false };
-    }
+interface State {
+    hasError: boolean;
+}
 
-    static getDerivedStateFromError(error) {
-        console.error(error)
+class ErrorBoundary extends Component<Props, State> {
+    public state: State = {
+        hasError: false
+    };
+
+    public static getDerivedStateFromError(_: Error): State {
         // Update state so the next render will show the fallback UI.
         return { hasError: true };
     }
 
-    componentDidCatch(error, info) {
-        logErrorToMyService(
-            error,
-            // Example "componentStack":
-            //   in ComponentThatThrows (created by App)
-            //   in ErrorBoundary (created by App)
-            //   in div (created by App)
-            //   in App
-            info.componentStack,
-            // Only available in react@canary.
-            // Warning: Owner Stack is not available in production.
-            React.captureOwnerStack(),
-        );
+    public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+        console.error("Uncaught error:", error, errorInfo);
     }
 
-    render() {
+    public render() {
         if (this.state.hasError) {
-            // You can render any custom fallback UI
-            return this.props.fallback;
+            return <h1>Sorry.. there was an error</h1>;
         }
 
         return this.props.children;
     }
 }
+
 export default ErrorBoundary;
