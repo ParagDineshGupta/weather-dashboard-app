@@ -21,7 +21,7 @@ const fetchWithRetry = async (url: string, retries = 3, delay = 1000) => {
 
 
 function CityWeather({ city, removeCity }: { city: string, removeCity: (string: string) => void }) {
-    const [weatherData, setWeatherData] = useState<any>(null);
+    const [weatherData, setWeatherData] = useState<null | Record<string, any>>(null);
     const [error, setError] = useState('');
     // bulk_queries_not_supported_on_plan
     const fetchWeatherData = async () => {

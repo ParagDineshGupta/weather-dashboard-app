@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 
-function CityInput({ addCity }: any) {
+function CityInput({ addCity }: { addCity: (city: string) => void; }) {
     const [city, setCity] = useState('');
 
     const handleSubmit = (e: FormEvent) => {
