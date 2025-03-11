@@ -1,54 +1,58 @@
-# React + TypeScript + Vite
+# Weather Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Weather Dashboard application built with React that allows users to view the current weather for multiple cities. The application integrates with the OpenWeatherMap API to fetch weather data.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Display the current weather for user-specified cities, including temperature, humidity, and wind speed.
+- Add and remove cities from the dashboard.
+- Retry mechanism with exponential backoff for fetching API data.
+- User's city selection is persisted across sessions using local storage.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React and Typescript
+- Axios for API requests
+- OpenWeatherMap API for weather data
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Setup Instructions
+
+To run the Weather Dashboard application on your local machine, follow these steps:
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js (version 14 or higher)
+- npm (Node Package Manager)
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/ParagDineshGupta/weather-dashboard-app.git
+cd weather-dashboard-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+install the required dependencies:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```
+npm install
+```
+
+### Set Up Environment Variables
+
+Create a file named .env in the root of the project.
+Add your WeatherStack API key to the .env file:
+
+```
+VITE_API_KEY= <Key>
+```
+
+### Start the Development Server
+
+```
+npm run dev
+
 ```
