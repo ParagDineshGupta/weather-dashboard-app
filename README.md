@@ -1,6 +1,6 @@
 # Weather Dashboard
 
-A simple Weather Dashboard application built with React that allows users to view the current weather for multiple cities. The application integrates with the OpenWeatherMap API to fetch weather data.
+A simple Weather Dashboard application built with React that allows users to view the current weather for multiple cities. The application integrates with the Weatherstack API to fetch weather data.
 
 ## Features
 
