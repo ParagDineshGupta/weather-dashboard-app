@@ -54,5 +54,6 @@ VITE_API_KEY= <Key>
 
 ```
 npm run dev
-
 ```
+![image](https://github.com/user-attachments/assets/8d93bf21-0602-425a-9af8-0defa48d4f56)
+![image](https://github.com/user-attachments/assets/9ad77718-9d5c-48fc-9fa0-8cd559d3f08d)
