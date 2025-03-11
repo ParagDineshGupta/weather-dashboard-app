@@ -16,7 +16,7 @@ We can temporarily store API responses for each city for some time (30 mins) and
 
 - React and Typescript
 - Axios for API requests
-- OpenWeatherMap API for weather data
+- Weatherstack API for weather data
 
 ## Setup Instructions
 
