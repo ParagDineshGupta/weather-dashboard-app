@@ -27,7 +27,7 @@ function CityWeather({ city, removeCity }: { city: string, removeCity: (string: 
     const fetchWeatherData = async () => {
         try {
             // const response = await axios.get(`http://api.weatherstack.com/current?access_key=${API_KEY}&query=${city}`);
-            const response = await fetchWithRetry(`http://api.weatherstack.com/current?access_key=${API_KEY}&query=${city}`);
+            const response = await fetchWithRetry(`https://api.weatherstack.com/current?access_key=${API_KEY}&query=${city}`);
             setWeatherData(response?.data);
             setError('');
         } catch (err) {
